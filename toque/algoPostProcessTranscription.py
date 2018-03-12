@@ -3,7 +3,7 @@ import numpy as np
 from utils import adjustScale
 
 
-def algoPostProcessTranscription(notes,tone,transposed):
+def algoPostProcessTranscription(notes, tone, transposed):
 
     '''
     Post-processing stage for automatic note transcription: Notes are transposed or eliminated based on their relative
@@ -20,7 +20,7 @@ def algoPostProcessTranscription(notes,tone,transposed):
     '''
 
     # PARAMETERS
-    minNoteDurationSec = 0.08
+    minNoteDurationSec = 0.02
 
     # compute duration mean and std
     noteArray = array(notes)
@@ -40,7 +40,7 @@ def algoPostProcessTranscription(notes,tone,transposed):
     E_frigio_mayorizado=np.hstack((E_frigio_mayorizado_1,E_frigio_mayorizado_2,E_frigio_mayorizado_3,E_frigio_mayorizado_4))
 
 
-    E_mayor_1 = np.array([40.0,41.0, 42.0, 44.0, 45.0, 47.0,48.0, 49.0, 51.0])
+    E_mayor_1 = np.array([40.0,41.0,42.0,44.0,45.0,47.0,48.0,49.0,51.0])
     E_mayor_2 = E_mayor_1 + 12
     E_mayor_3 = E_mayor_2 + 12
     E_mayor_4 = E_mayor_3 + 12
